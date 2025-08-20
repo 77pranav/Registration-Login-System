@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Page</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <% if(session.getAttribute("name")!=null){ %>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+             <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="views/blogs.jsp">Create blogs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="logout">Log Out</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#"><%= session.getAttribute("name") %></a>
+                    </li>
+             </ul>
+        </div>
+        <% }else{ %>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <ul class="navbar-nav">
+                 <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="views/register.jsp">Create Account</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="views/login.jsp">Log In</a>
+                 </li>
+              </ul>
+         </div>
+         <% } %>
+        <a class="navbar-brand" href="#">
+            <img src="images/userAvatar/userAvatar.png" width="35" height="35" alt="">
+        </a>
+    </div>
+</nav>
+    <h1>Hello</h1>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
